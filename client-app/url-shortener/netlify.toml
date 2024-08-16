@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "npm install --force && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_ENV = "production"
   VITE_SERVER_URL = "https://scissors-url-shortener-igmp.onrender.com/api"
+
