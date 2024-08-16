@@ -1,8 +1,7 @@
 [build]
-  command = "npm install --force && npm install vite && npx vite build"
+  command = "npm install --force && npm install vite@5.4.1 && npx vite build"
   publish = "dist"
 
 [build.environment]
   NODE_ENV = "production"
   VITE_SERVER_URL = "https://scissors-url-shortener-igmp.onrender.com/api"
-
