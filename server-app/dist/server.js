@@ -14,10 +14,13 @@ const port = process.env.PORT || 5001;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)({
-    origin: "http://localhost:3001",
+// CORS configuration
+const corsOptions = {
+    origin: ['http://localhost:3001', 'https://scissors-url-shortener-project.netlify.app'],
     credentials: true,
-}));
+    optionsSuccessStatus: 200,
+};
+app.use((0, cors_1.default)(corsOptions));
 app.use("/api/", shortUrl_1.default);
 app.listen(port, () => {
     console.log(`Server started successfully on port: ${port}`);
